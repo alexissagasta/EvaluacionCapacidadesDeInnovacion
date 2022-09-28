@@ -1,5 +1,21 @@
-
 function obtenerRespuestas() {
+  let preguntas = new Object();
+  for (let step = 1; step < 67; step++) {
+    var radioButtonGroup = document.getElementsByName("P" + step);
+    var checkedRadio = Array.from(radioButtonGroup).find((radio) => radio.checked);
+    let pregunta="pregunta "+step
+    if(checkedRadio==undefined){
+      alert("Tiene que constestar todas las preguntas (Pregunta "+step+")")
+      return
+    }
+    preguntas[pregunta] = checkedRadio.value;
+    console.log(preguntas)
+  }
+
+}
+
+function obtenerRespuestasa() {
+
   let e1p1 = document.getElementById('D1P1');
   let e1p2 = document.getElementById('D1P2');
   let e1p3 = document.getElementById('D1P3');
