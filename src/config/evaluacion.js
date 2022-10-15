@@ -2,10 +2,22 @@
 
 class gestionarEvaluacion {
 
-    registrarEvaluacion = async (db, evaluacion) => {
+    registrarEvaluacion = async (db, evaluacion, tipo) => {
         try {
-            var dbo = db.db("PDTDxPymes");
-            const res = await dbo.collection("evaluaciones").insertOne(evaluacion);
+            var dbo = db.db("EvaluacionCapacidadesDeInnovacion");
+            const res = await dbo.collection(tipo).updateOne(
+                { seccion: tipo, email: evaluacion.email, empresa: evaluacion.empresa },
+                {
+                    $set: {
+                        email: evaluacion.email,
+                        empresa: evaluacion.empresa,
+                        preguntas: evaluacion.preguntas,
+                        seccion: tipo,
+                        puntaje: evaluacion.puntaje
+                    }
+                },
+                { upsert: true }
+            )
             console.log("Una evaluacion ha sido agregada");
             return res;
 
@@ -16,8 +28,8 @@ class gestionarEvaluacion {
 
     borrarEvaluacionPorId = async (db, id, email) => {
         try {
-            var dbo = db.db("PDTDxPymes");
-            const res = await dbo.collection("evaluaciones").deleteOne({"_id":id});
+            var dbo = db.db("EvaluacionCapacidadesDeInnovacion");
+            const res = await dbo.collection("evaluaciones").deleteOne({ "_id": id });
 
             console.log({ realizado: res });
             if (res.deletedCount == 0) {
@@ -38,7 +50,7 @@ class gestionarEvaluacion {
     listarEvaluacionesPorEmail = async (client, email) => {
         try {
             // specify the DB's name
-            const db = client.db('PDTDxPymes');
+            const db = client.db('EvaluacionCapacidadesDeInnovacion');
             // execute find query
             const items = await db.collection('evaluaciones').find({ "email": email }).toArray();
             //console.log(items);

@@ -31,18 +31,19 @@ client.connect(async function (err, db) {
         }
     });
 
-    router.post('/guardarEvaluacion', async (req, res, next) => {
+    router.post('/guardarEvaluacion/:tipo', async (req, res, next) => {
         try {
             const data = req.body;
+            var tipo = req.params.tipo;
             console.log("Evaluacion: " + JSON.stringify(data));
             //Almacena en Json
-            info = await gestorEvaluacion.registrarEvaluacion(db, data);
+            info = await gestorEvaluacion.registrarEvaluacion(db, data, tipo);
             //Se verifica si se agrego el área
             if (info === "Una evaluacion ya tiene esa id!") {
                 res.status(200).send({ alerta: info });
             } else {
 
-                res.status(201).send({ mensaje: "evaluacion agregada!" });
+                res.status(201).send({ mensaje: "Evaluacion agregada!" });
             }
         } catch (err) {
             next(err)

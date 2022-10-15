@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Evaluación capacidades de innovación</title>
   <%- include('partials/head'); -%>
+    <script type="text/javascript" src="/funciones.js"></script>
 </head>
 
 <body class="profile">
@@ -48,11 +49,169 @@
     </div>
     <br>
 
+    <div id="Seccion de informacion de la empresa">
+      <div class="d-grid gap-2">
+        <button class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#empresa"
+          aria-expanded="false" aria-controls="empresa">
+          Informacion de la empresa
+        </button>
+      </div>
+      <br>
+
+      <div class="collapse bg-primary border border-3" id="empresa">
+        <div class="p-3 bg-dark text-white rounded-3">
+          <p>¿Qué función desempeñas en la organización?</p>
+          <input type="radio" id="Finanzasyadminisitracion" name="Emp1" value="Finanzas y adminisitración">
+          <label for="Finanzasyadminisitracion">Finanzas y adminisitración</label><br>
+          <input type="radio" id="Gestion" name="Emp1" value="Gestión de empresas y dirección ejecutiva">
+          <label for="Gestion">Gestión de empresas y dirección ejecutiva</label><br>
+          <input type="radio" id="Ventas" name="Emp1" value="Ventas">
+          <label for="Ventas">Ventas</label><br>
+          <input type="radio" id="Desarrollodelproducto" name="Emp1" value="Desarrollo del producto">
+          <label for="Desarrollodelproducto">Desarrollo del producto</label><br>
+          <input type="radio" id="TI" name="Emp1" value="Tecnología de la información (TI)">
+          <label for="TI">Tecnología de la información (TI)</label><br>
+          <input type="radio" id="Produccion" name="Emp1" value="Producción">
+          <label for="Produccion">Producción</label><br>
+          <input type="radio" id="Adquisiciones" name="Emp1" value="Adquisiciones, cadena de suministro y logística">
+          <label for="Adquisiciones">Adquisiciones, cadena de suministro y logística</label><br>
+          <input type="radio" id="riesgo" name="Emp1" value="Auditoría y gestión de riesgo">
+          <label for="riesgo">Auditoría y gestión de riesgo</label><br>
+          <input type="radio" id="juridicos" name="Emp1" value="Servicios jurídicos y de competencia">
+          <label for="juridicos">Servicios jurídicos y de competencia</label><br>
+          <input type="radio" id="Servicioalcliente" name="Emp1" value="Servicio al cliente">
+          <label for="Servicioalcliente">Servicio al cliente</label><br>
+          <input type="radio" id="inmuebles" name="Emp1" value="Instalaciones y servicios de inmuebles">
+          <label for="inmuebles">Instalaciones y servicios de inmuebles</label><br>
+          <input type="radio" id="RH" name="Emp1" value="Recursos humanos">
+          <label for="RH">Recursos humanos</label><br>
+          <input type="radio" id="Mercadotecnia" name="Emp1" value="Mercadotecnia y comunicaciones">
+          <label for="Mercadotecnia">Mercadotecnia y comunicaciones</label><br>
+          <input type="radio" id="Gproducto" name="Emp1" value="Gestión de producto">
+          <label for="Gproducto">Gestión de producto</label><br>
+          <input type="radio" id="Gprogramasyproyectos" name="Emp1" value="Gestión de programas y de proyectos">
+          <label for="Gprogramasyproyectos">Gestión de programas y de proyectos</label><br>
+          <input type="radio" id="Calidad" name="Emp1" value="Calidad y excelencia de procesos">
+          <label for="Calidad">Calidad y excelencia de procesos</label><br>
+          <input type="radio" id="R&D" name="Emp1" value="Investigación y desarrollo (R&D)">
+          <label for="R&D">Investigación y desarrollo (R&D)</label><br>
+          <input type="radio" id="Estrategia" name="Emp1" value="Estrategia">
+          <label for="Estrategia">Estrategia</label><br>
+          <input type="radio" id="Otra" name="Emp1" value="Otra">
+          <label for="Otra">Otra</label><br>
+        </div>
+        <br>
+
+        <div class="p-3 bg-dark text-white rounded-3">
+          <p>¿Cuántos empleados tiene la organización?</p>
+          <input type="radio" id="1-50" name="Emp2" value="1-50">
+          <label for="1-50">1-50</label><br>
+          <input type="radio" id="51-500" name="Emp2" value="51-500">
+          <label for="51-500">51-500</label><br>
+          <input type="radio" id="501-5000" name="Emp2" value="501-5000">
+          <label for="501-5000">501-5000</label><br>
+          <input type="radio" id="Más de 5000" name="Emp2" value="Más de 5000">
+          <label for="Más de 5000">Más de 5000</label><br>
+          <input type="radio" id="No sé" name="Emp2" value="No sé">
+          <label for="No sé">No sé</label><br>
+        </div>
+        <br>
+
+        <div class="p-3 bg-dark text-white rounded-3">
+          <p>¿A qué mercados atiende la organización?</p>
+          <input type="checkbox" id="Local" name="Emp3-1" value="Local">
+          <label for="Local">Local</label><br>
+          <input type="checkbox" id="Estatal" name="Emp3-2" value="Estatal">
+          <label for="Estatal">Estatal</label><br>
+          <input type="checkbox" id="Regional" name="Emp3-3" value="Regional">
+          <label for="Regional">Regional</label><br>
+          <input type="checkbox" id="Nacional" name="Emp3-4" value="Nacional">
+          <label for="Nacional">Nacional</label><br>
+          <input type="checkbox" id="Internacional" name="Emp3-5" value="Internacional">
+          <label for="Internacional">Internacional</label><br>
+        </div>
+        <br>
+
+        <div class="p-3 bg-dark text-white rounded-3">
+          <p>¿Dónde está ubicada la organización?</p>
+          <select id="Emp4" class="form-select" aria-label="Default select example">
+            <option selected>Seleccione un valor</option>
+            <option value="Sonora">Sonora</option>
+            <option value="México">México</option>
+            <option value="EU">EU</option>
+            <option value="otro">otro</option>
+          </select>
+        </div>
+        <br>
+
+        <div class="p-3 bg-dark text-white rounded-3">
+          <p>¿En qué segmentos industriales participa la organización?</p>
+          <input type="checkbox" id="Construcción" name="Emp3-1" value="Construcción">
+          <label for="Construcción">Construcción</label><br>
+          <input type="checkbox" id="Suministros" name="Emp3-2"
+            value="Suministros de electricidad, gas, vapor y aires acondicionados">
+          <label for="Suministros">Suministros de electricidad, gas, vapor y aires acondicionados</label><br>
+          <input type="checkbox" id="hogares" name="Emp3-3" value="hogares">
+          <label for="hogares">Actividades de los hogares como empleadores de personal doméstico; Actividades de los
+            hogares como
+            productores de bienes y servicios para uso propio.</label><br>
+          <input type="checkbox" id="inmobiliarias" name="Emp3-4" value="Actividades inmobiliarias">
+          <label for="inmobiliarias">Actividades inmobiliarias</label><br>
+          <input type="checkbox" id="seguros" name="Emp3-5" value="Actividades financieras y de seguros">
+          <label for="seguros">Actividades financieras y de seguros</label><br>
+          <input type="checkbox" id="motor" name="Emp3-5"
+            value="Comercio al por mayor y al por menor; reparación de vehículos de motor y motocicletas">
+          <label for="motor">Comercio al por mayor y al por menor; reparación de vehículos de motor y
+            motocicletas</label><br>
+          <input type="checkbox" id="alojamiento" name="Emp3-5"
+            value="Hostelería, servicios de alojamiento y servicios de alimentos y bebidas">
+          <label for="alojamiento">Hostelería, servicios de alojamiento y servicios de alimentos y bebidas</label><br>
+          <input type="checkbox" id="comunicaciones" name="Emp3-5" value="Información y comunicaciones">
+          <label for="comunicaciones">Información y comunicaciones</label><br>
+          <input type="checkbox" id="Agricultura" name="Emp3-5" value="Agricultura, ganadería, silvicultura y pesca">
+          <label for="Agricultura">Agricultura, ganadería, silvicultura y pesca</label><br>
+          <input type="checkbox" id="recreativas" name="Emp3-5"
+            value="Actividades artísticas, recreativas y de entretenimiento">
+          <label for="recreativas">Actividades artísticas, recreativas y de entretenimiento</label><br>
+          <input type="checkbox" id="defensa" name="Emp3-5"
+            value="Administración pública y defensa; Seguridad Social obligatoria">
+          <label for="defensa">Administración pública y defensa; Seguridad Social obligatoria</label><br>
+          <input type="checkbox" id="Manufactura" name="Emp3-5" value="Manufactura">
+          <label for="Manufactura">Manufactura</label><br>
+          <input type="checkbox" id="almacenamiento" name="Emp3-5" value="Transporte y almacenamiento">
+          <label for="almacenamiento">Transporte y almacenamiento</label><br>
+          <input type="checkbox" id="Educa" name="Emp3-5" value="Educación">
+          <label for="Educa">Educación</label><br>
+          <input type="checkbox" id="auxiliares" name="Emp3-5"
+            value="Actividades administrativas y servicios auxiliares">
+          <label for="auxiliares">Actividades administrativas y servicios auxiliares</label><br>
+          <input type="checkbox" id="extractivas" name="Emp3-5" value="Industrias extractivas">
+          <label for="extractivas">Industrias extractivas</label><br>
+          <input type="checkbox" id="sanitarias" name="Emp3-5" value="Actividades sanitarias y de servicios sociales">
+          <label for="sanitarias">Actividades sanitarias y de servicios sociales</label><br>
+          <input type="checkbox" id="agua" name="Emp3-5"
+            value="Suministro de agua, actividades de saneamiento, gestión de residuos y descontaminación">
+          <label for="agua">Suministro de agua, actividades de saneamiento, gestión de residuos y
+            descontaminación</label><br>
+          <input type="checkbox" id="profesionales" name="Emp3-5"
+            value="Actividades profesionales, científicas y técnicas">
+          <label for="profesionales">Actividades profesionales, científicas y técnicas</label><br>
+          <input type="checkbox" id="extraterritoriales" name="Emp3-5"
+            value="Actividades de organizaciones y organismos extraterritoriales">
+          <label for="extraterritoriales">Actividades de organizaciones y organismos extraterritoriales</label><br>
+          <input type="checkbox" id="Otrasservicio" name="Emp3-5" value="Otras actividades de servicio">
+          <label for="Otrasservicio">Otras actividades de servicio</label><br>
+        </div>
+        <br>
+
+      </div>
+    </div>
+
     <div id="Seccion de Estrategia">
       <div class="d-grid gap-2">
-        <button class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#estrategia"
+        <button id="btnEstrategia" class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#estrategia"
           aria-expanded="false" aria-controls="estrategia">
-          Estrategia
+          Estrategia 0/60
         </button>
       </div>
       <br>
@@ -60,30 +219,30 @@
       <div class="collapse bg-primary border border-3" id="estrategia">
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Realiza la organización esfuerzos significativos para innovar?</p>
-          <input type="radio" id="Falso1" name="P1" value="Falso">
+          <input type="radio" id="Falso1" name="EstP1" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P1" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP1" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P1" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP1" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P1" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP1" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P1" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP1" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Ha realiza la organización algún esfuerzos significativos para innovar en el último año?</p>
-          <input type="radio" id="Falso1" name="P2" value="Falso">
+          <input type="radio" id="Falso1" name="EstP2" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P2" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP2" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P2" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP2" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P2" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP2" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P2" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP2" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -91,15 +250,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La Innovación en la organización impacta y genera cambios mejoras (corto plazo), incrementales (mediano
             plazo), y/o radicales (largo plazo)?</p>
-          <input type="radio" id="Falso1" name="P3" value="Falso">
+          <input type="radio" id="Falso1" name="EstP3" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P3" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP3" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P3" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP3" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P3" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP3" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P3" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP3" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -108,30 +267,30 @@
           <p>¿Explora la organización sus mercados en busca de futuras necesidades reales en vez de descansar en
             demandas
             percibidas actuales?</p>
-          <input type="radio" id="Falso1" name="P4" value="Falso">
+          <input type="radio" id="Falso1" name="EstP4" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P4" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP4" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P4" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP4" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P4" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP4" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P4" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP4" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización explora sistemáticamente la demanda del mercado?</p>
-          <input type="radio" id="Falso1" name="P5" value="Falso">
+          <input type="radio" id="Falso1" name="EstP5" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P5" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP5" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P5" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP5" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P5" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP5" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P5" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP5" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -140,15 +299,15 @@
           <p>¿La organización utiliza nuevas tecnologías? Ejemplo: computo en la nube, internet de las
             cosas, inteligencia artificial, inteligencia de negocios, blockchain, realidad virtual o
             aumentada)</p>
-          <input type="radio" id="Falso1" name="P6" value="Falso">
+          <input type="radio" id="Falso1" name="EstP6" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P6" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP6" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P6" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP6" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P6" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP6" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P6" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP6" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -157,30 +316,30 @@
           <p>¿La organización innova principalmente para incrementar sus utilidades (o en caso de
             organizaciones sin fines de lucro, incrementar los beneficios de sus miembros o de su
             población constituyente)?</p>
-          <input type="radio" id="Falso1" name="P7" value="Falso">
+          <input type="radio" id="Falso1" name="EstP7" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P7" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP7" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P7" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP7" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P7" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP7" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P7" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP7" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización innova para incrementar y/o fortalecer su posición competitiva?</p>
-          <input type="radio" id="Falso1" name="P8" value="Falso">
+          <input type="radio" id="Falso1" name="EstP8" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P8" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP8" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P8" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP8" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P8" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP8" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P8" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP8" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -188,15 +347,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización cuestiona de forma continua tanto su modelo de negocio como su
             oferta, "nada es sagrado"?</p>
-          <input type="radio" id="Falso1" name="P9" value="Falso">
+          <input type="radio" id="Falso1" name="EstP9" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P9" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP9" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P9" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP9" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P9" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP9" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P9" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP9" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -204,15 +363,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización establece metas de innovación y trabaja sistemáticamente para
             conseguirlas?</p>
-          <input type="radio" id="Falso1" name="P10" value="Falso">
+          <input type="radio" id="Falso1" name="EstP10" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P10" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP10" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P10" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP10" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P10" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP10" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P10" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP10" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -220,15 +379,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Encuentra la organización nuevas áreas en donde usar sus capacidades y maneras
             diferentes de aplicarlas?</p>
-          <input type="radio" id="Falso1" name="P11" value="Falso">
+          <input type="radio" id="Falso1" name="EstP11" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P11" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP11" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P11" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP11" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P11" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP11" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P11" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP11" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -236,70 +395,78 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización invierte en proyectos de innovación riesgosos que no necesariamente
             devuelven la inversión?</p>
-          <input type="radio" id="Falso1" name="P12" value="Falso">
+          <input type="radio" id="Falso1" name="EstP12" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P12" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="EstP12" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P12" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="EstP12" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P12" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="EstP12" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P12" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="EstP12" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
+        <br><br>
+        <div class="position-relative">
+          <button id="btnEv" class="btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle"
+            onclick="obtenerRespuestas('estrategia')">
+            Evaluar
+          </button>
+        </div>
+        <br><br>
       </div>
     </div>
 
     <div id="Seccion de Organización de la Innovación">
       <div class="d-grid gap-2">
-        <button class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#orgDeLaInovacion"
+        <button id="btnOrg" class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#orgDeLaInovacion"
           aria-expanded="false" aria-controls="orgDeLaInovacion">
-          Organización de la Innovación
+          Organización de la Innovación 0/90
         </button>
       </div>
       <br>
       <div class="collapse bg-primary border border-3" id="orgDeLaInovacion">
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Innova la organización sus productos y/o servicios?</p>
-          <input type="radio" id="Falso1" name="P13" value="Falso">
+          <input type="radio" id="Falso1" name="orgP1" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P13" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP1" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P13" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP1" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P13" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP1" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P13" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP1" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Innova la organización sus procesos?</p>
-          <input type="radio" id="Falso1" name="P14" value="Falso">
+          <input type="radio" id="Falso1" name="orgP2" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P14" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP2" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P14" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP2" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P14" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP2" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P14" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP2" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Innova la organización su estructura organizacional?</p>
-          <input type="radio" id="Falso1" name="P15" value="Falso">
+          <input type="radio" id="Falso1" name="orgP3" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P15" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP3" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P15" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP3" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P15" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP3" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P15" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP3" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -307,30 +474,30 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Innova la organización sus sistemas de gestión (por ejemplo, en la administración del
             desempeño, en el aseguramiento de calidad, en su administración de incentivos, etc.)?</p>
-          <input type="radio" id="Falso1" name="P16" value="Falso">
+          <input type="radio" id="Falso1" name="orgP4" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P16" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP4" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P16" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP4" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P16" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP4" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P16" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP4" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Innova la organización en producción y logística con nuevos enfoques?</p>
-          <input type="radio" id="Falso1" name="P17" value="Falso">
+          <input type="radio" id="Falso1" name="orgP5" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P17" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP5" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P17" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP5" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P17" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP5" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P17" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP5" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -338,30 +505,30 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Regularmente innova la organización en su(s) modelo(s) de negocio, por ejemplo,
             usando tecnología digital para nuevos negocios?</p>
-          <input type="radio" id="Falso1" name="P18" value="Falso">
+          <input type="radio" id="Falso1" name="orgP6" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P18" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP6" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P18" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP6" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P18" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP6" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P18" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP6" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Innova la organización sus servicios?</p>
-          <input type="radio" id="Falso1" name="P19" value="Falso">
+          <input type="radio" id="Falso1" name="orgP7" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P19" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP7" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P19" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP7" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P19" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP7" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P19" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP7" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -369,15 +536,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización cuestiona de forma continua tanto su modelo de negocio como su
             oferta, "nada es sagrado"?</p>
-          <input type="radio" id="Falso1" name="P20" value="Falso">
+          <input type="radio" id="Falso1" name="orgP8" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P20" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP8" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P20" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP8" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P20" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP8" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P20" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP8" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -385,15 +552,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización establece metas de innovación y trabaja sistemáticamente para
             conseguirlas?</p>
-          <input type="radio" id="Falso1" name="P21" value="Falso">
+          <input type="radio" id="Falso1" name="orgP9" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P21" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP9" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P21" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP9" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P21" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP9" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P21" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP9" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -401,15 +568,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Encuentra la organización nuevas áreas en donde usar sus capacidades y maneras
             diferentes de aplicarlas?</p>
-          <input type="radio" id="Falso1" name="P22" value="Falso">
+          <input type="radio" id="Falso1" name="orgP10" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P22" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP10" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P22" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP10" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P22" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP10" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P22" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP10" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -417,30 +584,30 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización invierte en proyectos de innovación riesgosos que no necesariamente
             devuelven la inversión?</p>
-          <input type="radio" id="Falso1" name="P23" value="Falso">
+          <input type="radio" id="Falso1" name="orgP11" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P23" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP11" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P23" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP11" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P23" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP11" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P23" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP11" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Tiene la organización un modelo de liderzgo orientado a los objetivos?</p>
-          <input type="radio" id="Falso1" name="P24" value="Falso">
+          <input type="radio" id="Falso1" name="orgP12" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P24" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP12" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P24" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP12" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P24" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP12" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P24" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP12" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -448,15 +615,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Están todos los empleados enterados de la visión de la organización y están trabajando
             para que se cumpla?</p>
-          <input type="radio" id="Falso1" name="P25" value="Falso">
+          <input type="radio" id="Falso1" name="orgP13" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P25" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP13" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P25" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP13" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P25" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP13" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P25" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP13" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -465,30 +632,30 @@
           <p>¿La alta gerencia cataloga como prioritarios los esfuerzos en pos de la innovación y les
             asigna recursos suficientes?
           </p>
-          <input type="radio" id="Falso1" name="P26" value="Falso">
+          <input type="radio" id="Falso1" name="orgP14" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P26" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP14" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P26" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP14" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P26" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP14" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P26" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP14" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La colaboración entre las áreas funciona bien y continuamente genera nuevas ideas?</p>
-          <input type="radio" id="Falso1" name="P27" value="Falso">
+          <input type="radio" id="Falso1" name="orgP15" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P27" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP15" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P27" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP15" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P27" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP15" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P27" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP15" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -496,15 +663,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Permite la estructura de la organización el aprovechar nuevas ideas y probarlas
             formalmente y rápido?</p>
-          <input type="radio" id="Falso1" name="P28" value="Falso">
+          <input type="radio" id="Falso1" name="orgP16" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P28" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP16" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P28" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP16" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P28" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP16" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P28" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP16" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -512,15 +679,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización tiene un sistema de reconocimientos e incentivos para los esfuerzos de
             innovación?</p>
-          <input type="radio" id="Falso1" name="P29" value="Falso">
+          <input type="radio" id="Falso1" name="orgP17" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P29" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP17" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P29" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP17" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P29" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP17" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P29" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP17" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -528,55 +695,63 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La gente en la organización genera un ambiente sano y crea relaciones tanto
             internamente como con externos?</p>
-          <input type="radio" id="Falso1" name="P30" value="Falso">
+          <input type="radio" id="Falso1" name="orgP18" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P30" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="orgP18" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P30" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="orgP18" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P30" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="orgP18" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P30" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="orgP18" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
+        <br><br>
+        <div class="position-relative">
+          <button id="btnEv" class="btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle"
+            onclick="obtenerRespuestas('org')">
+            Evaluar
+          </button>
+        </div>
+        <br><br>
       </div>
     </div>
 
     <div id="Seccion de Preguntas relacionadas con el producto y servicio">
       <div class="d-grid gap-2">
-        <button class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#PregProductoyServicio"
+        <button id="btnProServ" class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#PregProductoyServicio"
           aria-expanded="false" aria-controls="PregProductoyServicio">
-          Preguntas relacionadas con el producto y servicio
+          Preguntas relacionadas con el producto y servicio  0/30
         </button>
       </div>
       <br>
       <div class="collapse bg-primary border border-3" id="PregProductoyServicio">
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización continuamente evalúa los productos de sus competidores?</p>
-          <input type="radio" id="Falso1" name="P31" value="Falso">
+          <input type="radio" id="Falso1" name="proServP1" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P31" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="proServP1" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P31" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="proServP1" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P31" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="proServP1" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P31" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="proServP1" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización lanza al mercado regularmente nuevos tipos de productos?</p>
-          <input type="radio" id="Falso1" name="P32" value="Falso">
+          <input type="radio" id="Falso1" name="proServP2" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P32" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="proServP2" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P32" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="proServP2" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P32" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="proServP2" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P32" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="proServP2" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -584,15 +759,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Cuenta la organización con procesos documentados para diseñar, probar y lanzar
             productos?</p>
-          <input type="radio" id="Falso1" name="P33" value="Falso">
+          <input type="radio" id="Falso1" name="proServP3" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P33" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="proServP3" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P33" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="proServP3" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P33" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="proServP3" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P33" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="proServP3" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -601,15 +776,15 @@
           <p>¿La organización trabaja sistemáticamente en la búsqueda de nuevos servicios para
             obtener una ventaja competitiva?
           </p>
-          <input type="radio" id="Falso1" name="P34" value="Falso">
+          <input type="radio" id="Falso1" name="proServP4" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P34" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="proServP4" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P34" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="proServP4" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P34" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="proServP4" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P34" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="proServP4" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -618,15 +793,15 @@
           <p>¿La organización pone a prueba nuevos servicios y los compara en un benchmark con los
             antiguos servicios, antes de su lanzamiento?
           </p>
-          <input type="radio" id="Falso1" name="P35" value="Falso">
+          <input type="radio" id="Falso1" name="proServP5" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P35" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="proServP5" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P35" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="proServP5" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P35" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="proServP5" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P35" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="proServP5" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -635,27 +810,34 @@
           <p>¿Evalúa la organización sus servicios a través de observar experiencias reales de
             clientes, mismas que se registran, analizan y evalúan dando como resultado mejoras
             concretas?</p>
-          <input type="radio" id="Falso1" name="P36" value="Falso">
+          <input type="radio" id="Falso1" name="proServP6" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P36" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="proServP6" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P36" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="proServP6" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P36" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="proServP6" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P36" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="proServP6" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
-        <br>
+        <br><br>
+        <div class="position-relative">
+          <button id="btnEv" class="btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle"
+            onclick="obtenerRespuestas('proServ')">
+            Evaluar
+          </button>
+        </div>
+        <br><br>
       </div>
     </div>
 
     <div id="Seccion de Preguntas relacionadas con el involucramiento del cliente">
       <div class="d-grid gap-2">
-        <button class="btn-lg btn-dark" type="button" data-bs-toggle="collapse"
+        <button id="btnInvoCliente" class="btn-lg btn-dark" type="button" data-bs-toggle="collapse"
           data-bs-target="#PregInvolucramientoDelCliente" aria-expanded="false"
           aria-controls="PregInvolucramientoDelCliente">
-          Preguntas relacionadas con el involucramiento del cliente
+          Preguntas relacionadas con el involucramiento del cliente 0/30
         </button>
       </div>
       <br>
@@ -663,15 +845,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización trabaja sistemáticamente con "comunidades" en donde los clientes
             contribuyen con ideas, así como ayudan a evaluar las más recientes innovaciones?</p>
-          <input type="radio" id="Falso1" name="P37" value="Falso">
+          <input type="radio" id="Falso1" name="invoClienteP1" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P37" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="invoClienteP1" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P37" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="invoClienteP1" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P37" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="invoClienteP1" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P37" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="invoClienteP1" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -679,15 +861,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización involucra a sus clientes en su proceso de desarrollo de nuevos
             productos y/o servicios?</p>
-          <input type="radio" id="Falso1" name="P38" value="Falso">
+          <input type="radio" id="Falso1" name="invoClienteP2" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P38" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="invoClienteP2" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P38" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="invoClienteP2" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P38" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="invoClienteP2" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P38" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="invoClienteP2" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -697,15 +879,15 @@
             retroalimentación de los clientes respecto a los productos y servicios clientes que ayudan
             a la organización en sus esfuerzos de innovación?
           </p>
-          <input type="radio" id="Falso1" name="P39" value="Falso">
+          <input type="radio" id="Falso1" name="invoClienteP3" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P39" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="invoClienteP3" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P39" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="invoClienteP3" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P39" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="invoClienteP3" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P39" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="invoClienteP3" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -713,15 +895,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Tiene la organización un entendimiento pleno y una visión del proceso de toma de
             decisiones de sus clientes?</p>
-          <input type="radio" id="Falso1" name="P40" value="Falso">
+          <input type="radio" id="Falso1" name="invoClienteP4" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P40" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="invoClienteP4" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P40" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="invoClienteP4" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P40" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="invoClienteP4" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P40" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="invoClienteP4" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -729,15 +911,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Estudia y analiza la organización el comportamiento real de los clientes para encontrar
             maneras innovadoras de dividir los mercados en nuevos segmentos diferenciados?</p>
-          <input type="radio" id="Falso1" name="P41" value="Falso">
+          <input type="radio" id="Falso1" name="invoClienteP5" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P41" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="invoClienteP5" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P41" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="invoClienteP5" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P41" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="invoClienteP5" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P41" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="invoClienteP5" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -746,26 +928,33 @@
           <p>¿Conduce frecuentemente la organización estudios de mercado independientes, sobre sí
             misma y sobre sus competidores, para estimar el potencial de mercado?
           </p>
-          <input type="radio" id="Falso1" name="P42" value="Falso">
+          <input type="radio" id="Falso1" name="invoClienteP6" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P42" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="invoClienteP6" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P42" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="invoClienteP6" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P42" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="invoClienteP6" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P42" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="invoClienteP6" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
-        <br>
+        <br><br>
+        <div class="position-relative">
+          <button id="btnEv" class="btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle"
+            onclick="obtenerRespuestas('invoCliente')">
+            Evaluar
+          </button>
+        </div>
+        <br><br>
       </div>
     </div>
 
     <div id="Seccion de Preguntas relacionadas con la realización de valor">
       <div class="d-grid gap-2">
-        <button class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#PregRealizacionDeValor"
+        <button id="btnValor" class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#PregRealizacionDeValor"
           aria-expanded="false" aria-controls="PregRealizacionDeValor">
-          Preguntas relacionadas con la realización de valor
+          Preguntas relacionadas con la realización de valor 0/35
         </button>
       </div>
       <br>
@@ -773,15 +962,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización evalúa y ajusta de manera regular su método para determinar precios,
             con base en pruebas de precios u otros métodos analíticos o experimentales?</p>
-          <input type="radio" id="Falso1" name="P43" value="Falso">
+          <input type="radio" id="Falso1" name="valorP1" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P43" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="valorP1" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P43" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="valorP1" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P43" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="valorP1" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P43" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="valorP1" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -789,15 +978,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La compañía es capaz y efectiva para aclarar sus ventajas en comparación con sus
             competidores?</p>
-          <input type="radio" id="Falso1" name="P44" value="Falso">
+          <input type="radio" id="Falso1" name="valorP2" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P44" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="valorP2" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P44" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="valorP2" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P44" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="valorP2" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P44" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="valorP2" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -805,15 +994,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Se asegura la organización de que todos los contactos con el cliente refuercen la
             propuesta de valor que la organización ofrece el mercado?</p>
-          <input type="radio" id="Falso1" name="P45" value="Falso">
+          <input type="radio" id="Falso1" name="valorP3" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P45" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="valorP3" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P45" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="valorP3" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P45" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="valorP3" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P45" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="valorP3" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -822,15 +1011,15 @@
           <p>¿La organización estudia y analiza de forma continua nuevos patrones de consumo en el
             mercado. Como por ejemplo, cómo es que los usuarios finales consumen productos y
             servicios en realidad?</p>
-          <input type="radio" id="Falso1" name="P1" value="Falso">
+          <input type="radio" id="Falso1" name="valorP4" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P46" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="valorP4" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P46" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="valorP4" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P46" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="valorP4" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P46" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="valorP4" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -838,15 +1027,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización continuamente encuentra y pone a prueba nuevos modelos de negocio
             (web, aplicaciones (apps) y oficinas móviles, hasta entregas rápidas a domicilio)?</p>
-          <input type="radio" id="Falso1" name="P1" value="Falso">
+          <input type="radio" id="Falso1" name="valorP5" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P47" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="valorP5" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P47" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="valorP5" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P47" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="valorP5" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P47" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="valorP5" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -854,15 +1043,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización estudia y analiza los formatos de entrega de otras industrias así como
             está innovando en nuevos formatos de entrega propios?</p>
-          <input type="radio" id="Falso1" name="P48" value="Falso">
+          <input type="radio" id="Falso1" name="valorP6" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P48" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="valorP6" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P48" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="valorP6" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P48" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="valorP6" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P48" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="valorP6" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -870,26 +1059,33 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización trata de satisfacer las necesidades reales de sus clientes y no
             solamente lo que los clientes responden directamente cuando se les pregunta?</p>
-          <input type="radio" id="Falso1" name="P49" value="Falso">
+          <input type="radio" id="Falso1" name="valorP7" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P49" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="valorP7" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P49" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="valorP7" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P49" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="valorP7" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P49" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="valorP7" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
+        <br><br>
+        <div class="position-relative">
+          <button id="btnEv" class="btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle"
+            onclick="obtenerRespuestas('valor')">
+            Evaluar
+          </button>
+        </div>
+        <br><br>
       </div>
-
     </div>
 
     <div id="Seccion de Preguntas relacionadas con el proceso">
       <div class="d-grid gap-2">
-        <button class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#PregProceso"
+        <button id="btnProceso" class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#PregProceso"
           aria-expanded="false" aria-controls="PregProceso">
-          Preguntas relacionadas con el proceso
+          Preguntas relacionadas con el proceso 0/25
         </button>
       </div>
       <br>
@@ -897,45 +1093,45 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Busca la organización sistemáticamente nuevas ideas de productos, serivios y
             procesos?</p>
-          <input type="radio" id="Falso1" name="P50" value="Falso">
+          <input type="radio" id="Falso1" name="procesoP1" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P50" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="procesoP1" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P50" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="procesoP1" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P50" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="procesoP1" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P50" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="procesoP1" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Tiene la organización un proceso para probar ideas de innovación ?</p>
-          <input type="radio" id="Falso1" name="P51" value="Falso">
+          <input type="radio" id="Falso1" name="procesoP2" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P51" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="procesoP2" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P51" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="procesoP2" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P51" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="procesoP2" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P51" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="procesoP2" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Puede la organización rápidamente llevar los proyectos de innovación al mercado?</p>
-          <input type="radio" id="Falso1" name="P52" value="Falso">
+          <input type="radio" id="Falso1" name="procesoP3" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P52" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="procesoP3" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P52" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="procesoP3" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P52" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="procesoP3" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P52" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="procesoP3" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -943,15 +1139,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Realiza la organización pruebas piloto de nuevos productos y servicios , aprende de
             ellas y adapta rápidamente los pilotos antes de hacer un lanzamiento final?</p>
-          <input type="radio" id="Falso1" name="P53" value="Falso">
+          <input type="radio" id="Falso1" name="procesoP4" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P53" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="procesoP4" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P53" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="procesoP4" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P53" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="procesoP4" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P53" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="procesoP4" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -959,27 +1155,33 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Tiene la organización una metodología para identificar errores y resolverlos en las partes
             tempranas del proceso de innovación?</p>
-          <input type="radio" id="Falso1" name="P53" value="Falso">
+          <input type="radio" id="Falso1" name="procesoP5" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P53" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="procesoP5" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P53" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="procesoP5" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P53" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="procesoP5" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P53" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="procesoP5" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
-        <br>
+        <br><br>
+        <div class="position-relative">
+          <button id="btnEv" class="btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle"
+            onclick="obtenerRespuestas('proceso')">
+            Evaluar
+          </button>
+        </div>
+        <br><br>
       </div>
-
     </div>
 
     <div id="Seccion de Preguntas relacionadas con la comunidad">
       <div class="d-grid gap-2">
-        <button class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#PregComunidad"
+        <button id="btnComunidad" class="btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#PregComunidad"
           aria-expanded="false" aria-controls="PregComunidad">
-          Preguntas relacionadas con la comunidad
+          Preguntas relacionadas con la comunidad 0/30
         </button>
       </div>
       <br>
@@ -987,15 +1189,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Tiene la organización socios externos involucrados en su desarrollo, como por ejemplo,
             universidades, start-ups, provedores y otros socios de la su misma rama?</p>
-          <input type="radio" id="Falso1" name="P54" value="Falso">
+          <input type="radio" id="Falso1" name="comunidadP1" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P54" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="comunidadP1" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P54" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="comunidadP1" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P54" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="comunidadP1" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P54" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="comunidadP1" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -1004,30 +1206,30 @@
           <p>¿Se encuentra la organización buscando constantemente nuevos talentos que
             contribuyan a su crecimiento y desarrollo?
           </p>
-          <input type="radio" id="Falso1" name="P55" value="Falso">
+          <input type="radio" id="Falso1" name="comunidadP2" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P55" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="comunidadP2" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P55" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="comunidadP2" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P55" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="comunidadP2" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P55" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="comunidadP2" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización involucra a sus proveedores y socios en sus innovaciones?</p>
-          <input type="radio" id="Falso1" name="P56" value="Falso">
+          <input type="radio" id="Falso1" name="comunidadP3" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P56" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="comunidadP3" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P56" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="comunidadP3" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P56" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="comunidadP3" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P56" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="comunidadP3" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -1035,15 +1237,15 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Hace la organización ingeniería inversa, (por ejemplo, compra y desarma productos de
             la competencia) para entender cómo fueron diseñados?</p>
-          <input type="radio" id="Falso1" name="P57" value="Falso">
+          <input type="radio" id="Falso1" name="comunidadP4" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P57" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="comunidadP4" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P57" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="comunidadP4" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P57" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="comunidadP4" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P57" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="comunidadP4" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -1052,15 +1254,15 @@
           <p>¿La organización se mantiene aprendiendo regularmente sobre nuevas tecnologías, aún
             cuando no sepa cómo sacarles provecho?
           </p>
-          <input type="radio" id="Falso1" name="P58" value="Falso">
+          <input type="radio" id="Falso1" name="comunidadP5" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P58" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="comunidadP5" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P58" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="comunidadP5" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P58" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="comunidadP5" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P58" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="comunidadP5" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -1069,43 +1271,49 @@
           <p>¿La organización compra y hace pruebas en innovaciones de competidores y de otras
             industrias?
           </p>
-          <input type="radio" id="Falso1" name="P59" value="Falso">
+          <input type="radio" id="Falso1" name="comunidadP6" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P59" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="comunidadP6" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P59" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="comunidadP6" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P59" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="comunidadP6" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P59" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="comunidadP6" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
-        <br>
+        <br><br>
+        <div class="position-relative">
+          <button id="btnEv" class="btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle"
+            onclick="obtenerRespuestas('comunidad')">
+            Evaluar
+          </button>
+        </div>
+        <br><br>
       </div>
-
     </div>
 
     <div id="Seccion de Preguntas relacionadas con el aprendizaje organizacional">
       <div class="d-grid gap-2">
-        <button class="btn-lg btn-dark" type="button" data-bs-toggle="collapse"
+        <button id="btnAprzjOrg" class="btn-lg btn-dark" type="button" data-bs-toggle="collapse"
           data-bs-target="#PregAprendizajeOrganizacional" aria-expanded="false"
           aria-controls="PregAprendizajeOrganizacional">
-          Preguntas relacionadas con el aprendizaje organizacional
+          Preguntas relacionadas con el aprendizaje organizacional 0/40
         </button>
       </div>
       <br>
       <div class="collapse bg-primary border border-3" id="PregAprendizajeOrganizacional">
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La gente en la organización cuenta la historia y los éxitos de ésta de forma amena?</p>
-          <input type="radio" id="Falso1" name="P60" value="Falso">
+          <input type="radio" id="Falso1" name="aprzjOrgP1" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P60" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="aprzjOrgP1" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P60" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="aprzjOrgP1" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P60" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="aprzjOrgP1" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P60" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="aprzjOrgP1" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -1113,30 +1321,30 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Tiene la organización empleados que crean ambientes propicios para la innovación,
             tanto internamente como en el exterior, con socios?</p>
-          <input type="radio" id="Falso1" name="P61" value="Falso">
+          <input type="radio" id="Falso1" name="aprzjOrgP2" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P61" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="aprzjOrgP2" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P61" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="aprzjOrgP2" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P61" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="aprzjOrgP2" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P61" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="aprzjOrgP2" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Tiene la organización empleados que experimentan y se les anima a hacerlo?</p>
-          <input type="radio" id="Falso1" name="P62" value="Falso">
+          <input type="radio" id="Falso1" name="aprzjOrgP3" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P62" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="aprzjOrgP3" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P62" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="aprzjOrgP3" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P62" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="aprzjOrgP3" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P62" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="aprzjOrgP3" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -1145,15 +1353,15 @@
           <p>¿Cuenta la organización con un número suficiente de "empleados-T", es decir quienes
             tienen una amplia manera de pensar y colaborar en varias disciplinas, pero que se
             concentran en realizar sólo una o unas cuantas tareas especializadas?</p>
-          <input type="radio" id="Falso1" name="P63" value="Falso">
+          <input type="radio" id="Falso1" name="aprzjOrgP4" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P63" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="aprzjOrgP4" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P63" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="aprzjOrgP4" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P63" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="aprzjOrgP4" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P63" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="aprzjOrgP4" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
@@ -1161,62 +1369,70 @@
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización invierte el tiempo necesario para evaluar adecuadamente los productos
             y servicios que son lanzados al mercado?</p>
-          <input type="radio" id="Falso1" name="P64" value="Falso">
+          <input type="radio" id="Falso1" name="aprzjOrgP5" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P64" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="aprzjOrgP5" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P64" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="aprzjOrgP5" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P64" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="aprzjOrgP5" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P64" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="aprzjOrgP5" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Los empleados de la organización aprenden unos de otros y de sus clientes?</p>
-          <input type="radio" id="Falso1" name="P65" value="Falso">
+          <input type="radio" id="Falso1" name="aprzjOrgP6" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P65" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="aprzjOrgP6" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P65" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="aprzjOrgP6" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P65" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="aprzjOrgP6" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P65" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="aprzjOrgP6" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿La organización mide sistemáticamente y evalúa sus esfuerzos de innovación?</p>
-          <input type="radio" id="Falso1" name="P66" value="Falso">
+          <input type="radio" id="Falso1" name="aprzjOrgP7" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P66" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="aprzjOrgP7" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P66" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="aprzjOrgP7" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P66" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="aprzjOrgP7" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P66" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="aprzjOrgP7" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
         <br>
 
         <div class="p-3 bg-dark text-white rounded-3">
           <p>¿Se recompensa y anima a los empleados para aportar nuevos conocimientos?</p>
-          <input type="radio" id="Falso1" name="P67" value="Falso">
+          <input type="radio" id="Falso1" name="aprzjOrgP8" value="Falso">
           <label for="Falso1">Falso</label><br>
-          <input type="radio" id="No totalmente cierto1" name="P67" value="No totalmente cierto">
+          <input type="radio" id="No totalmente cierto1" name="aprzjOrgP8" value="No totalmente cierto">
           <label for="No totalmente cierto1">No totalmente cierto</label><br>
-          <input type="radio" id="No se / No es aplicable1" name="P67" value="No se / No es aplicable">
+          <input type="radio" id="No se / No es aplicable1" name="aprzjOrgP8" value="No se / No es aplicable">
           <label for="No se / No es aplicable">No sé / No es aplicable</label><br>
-          <input type="radio" id="Casi verdadero1" name="P67" value="Casi verdadero">
+          <input type="radio" id="Casi verdadero1" name="aprzjOrgP8" value="Casi verdadero">
           <label for="Casi verdadero1">Casi verdadero</label><br>
-          <input type="radio" id="Verdadero1" name="P67" value="Verdadero">
+          <input type="radio" id="Verdadero1" name="aprzjOrgP8" value="Verdadero">
           <label for="Verdadero">Verdadero</label><br>
         </div>
+        <br><br>
+        <div class="position-relative">
+          <button id="btnEv" class="btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle"
+            onclick="obtenerRespuestas('aprzjOrg')">
+            Evaluar
+          </button>
+        </div>
+        <br><br>
       </div>
     </div>
     <br><br>

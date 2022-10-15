@@ -1,102 +1,416 @@
-function obtenerRespuestas() {
-  let preguntas = new Object();
-  for (let step = 1; step < 67; step++) {
-    var radioButtonGroup = document.getElementsByName("P" + step);
-    var checkedRadio = Array.from(radioButtonGroup).find((radio) => radio.checked);
-    let pregunta="pregunta "+step
-    if(checkedRadio==undefined){
-      alert("Tiene que constestar todas las preguntas (Pregunta "+step+")")
-      return
+async function obtenerRespuestas(seccion) {
+  let emailRaw = document.getElementById('idEmail').textContent;
+  let empresaRaw = document.getElementById('idEmpresa').textContent;
+  let email = emailRaw.replace(/\s+/g, '');
+  let empresa = empresaRaw.replace(/\s+/g, '');
+  if (seccion == "estrategia") {
+    let preguntas = new Object();
+    let suma = 0;
+    for (let step = 0; step < 12; step++) {
+      var preguntaActual = document.getElementsByName("EstP" + (step + 1));
+      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
+      let pregunta = "pregunta " + (step + 1)
+      if (checkedRadio == undefined) {
+        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
+        return
+      }
+      switch (checkedRadio.value) {
+        case "Falso":
+          suma = suma + 1
+          break;
+        case "No totalmente cierto":
+          suma = suma + 2
+          break;
+        case "No se / No es aplicable":
+          suma = suma + 3
+          break;
+        case "Casi verdadero":
+          suma = suma + 4
+          break;
+        case "Verdadero":
+          suma = suma + 5
+          break;
+        default:
+          return
+      }
+      preguntas[pregunta] = checkedRadio.value;
     }
-    preguntas[pregunta] = checkedRadio.value;
+
+    var botonEstrategia = document.getElementById("btnEstrategia");
+    botonEstrategia.textContent = "Estrategia " + suma + "/60"
+    botonEstrategia.classList.remove("btn-dark")
+    botonEstrategia.classList.add("btn-success")
     console.log(preguntas)
+    console.log(suma)
+    
+    //se guarda la evaluacion
+    let evaluacion = new Object();
+    evaluacion["email"] = email
+    evaluacion["empresa"] = empresa
+    evaluacion["preguntas"] = preguntas
+    evaluacion["seccion"] = "evaluacion"
+    evaluacion["puntaje"] = suma
+    console.log(evaluacion)
+    let mensaje = await guardarEvaluacion(evaluacion, "evaluacion", email, empresa);
+    alert(mensaje.mensaje)
   }
-
-}
-
-function obtenerRespuestasa() {
-
-  let e1p1 = document.getElementById('D1P1');
-  let e1p2 = document.getElementById('D1P2');
-  let e1p3 = document.getElementById('D1P3');
-  let e1p4 = document.getElementById('D1P4');
-  let e1p5 = document.getElementById('D1P5');
-  let e1p6 = document.getElementById('D1P6');
-  let e1p7 = document.getElementById('D1P7');
-  let e1p8 = document.getElementById('D1P8');
-
-  let e2p1 = document.getElementById('D2P1');
-  let e2p2 = document.getElementById('D2P2');
-  let e2p3 = document.getElementById('D2P3');
-  let e2p4 = document.getElementById('D2P4');
-  let e2p5 = document.getElementById('D2P5');
-
-  let e3p1 = document.getElementById('D3P1');
-  let e3p2 = document.getElementById('D3P2');
-  let e3p3 = document.getElementById('D3P3');
-  let e3p4 = document.getElementById('D3P4');
-  let e3p5 = document.getElementById('D3P5');
-
-  let e4p1 = document.getElementById('D4P1');
-  let e4p2 = document.getElementById('D4P2');
-  let e4p3 = document.getElementById('D4P3');
-  let e4p4 = document.getElementById('D4P4');
-  let e4p5 = document.getElementById('D4P5');
-
-  let e5p1 = document.getElementById('D5P1');
-  let e5p2 = document.getElementById('D5P2');
-  let e5p3 = document.getElementById('D5P3');
-  let e5p4 = document.getElementById('D5P4');
-  let e5p5 = document.getElementById('D5P5');
-
-  let todasP = [e1p1, e1p2, e1p3, e1p4, e1p5, e1p6, e1p7, e1p8, e2p1, e2p2,
-    e2p3, e2p4, e2p5, e3p1, e3p2, e3p3, e3p4, e3p5, e4p1, e4p2, e4p3, e4p4,
-    e4p5, e5p1, e5p2, e5p3, e5p4, e5p5]
-
-  let todasPD1 = [e1p1, e1p2, e1p3, e1p4, e1p5, e1p6, e1p7, e1p8]
-  let todasPD2 = [e2p1, e2p2, e2p3, e2p4, e2p5]
-  let todasPD3 = [e3p1, e3p2, e3p3, e3p4, e3p5]
-  let todasPD4 = [e4p1, e4p2, e4p3, e4p4, e4p5]
-  let todasPD5 = [e5p1, e5p2, e5p3, e5p4, e5p5]
-
-  let todasPNumeros = []
-
-  let sumaPD1Numeros = 0
-  let sumaPD2Numeros = 0
-  let sumaPD3Numeros = 0
-  let sumaPD4Numeros = 0
-  let sumaPD5Numeros = 0
-
-  todasP.every(lt => {
-    if (lt.options[lt.selectedIndex].text == "Seleccione un valor") {
-      alert("Tiene que responder todas las preguntas")
-      return false
+  if (seccion == "org") {
+    let preguntas = new Object();
+    let suma = 0;
+    for (let step = 0; step < 18; step++) {
+      var preguntaActual = document.getElementsByName("orgP" + (step + 1));
+      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
+      let pregunta = "pregunta " + (step + 1)
+      if (checkedRadio == undefined) {
+        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
+        return
+      }
+      switch (checkedRadio.value) {
+        case "Falso":
+          suma = suma + 1
+          break;
+        case "No totalmente cierto":
+          suma = suma + 2
+          break;
+        case "No se / No es aplicable":
+          suma = suma + 3
+          break;
+        case "Casi verdadero":
+          suma = suma + 4
+          break;
+        case "Verdadero":
+          suma = suma + 5
+          break;
+        default:
+          return
+      }
+      preguntas[pregunta] = checkedRadio.value;
     }
-    return true
-  })
 
-  todasPD1.forEach(lt => {
-    sumaPD1Numeros = sumaPD1Numeros + parseInt(lt.options[lt.selectedIndex].text)
-  })
+    var botonOrg = document.getElementById("btnOrg");
+    botonOrg.textContent = "Organización de la Innovación " + suma + "/90"
+    botonOrg.classList.remove("btn-dark")
+    botonOrg.classList.add("btn-success")
+    console.log(preguntas)
+    console.log(suma)
+    
+    //se guarda la evaluacion
+    let evaluacion = new Object();
+    evaluacion["email"] = email
+    evaluacion["empresa"] = empresa
+    evaluacion["preguntas"] = preguntas
+    evaluacion["seccion"] = "organizacion"
+    evaluacion["puntaje"] = suma
+    console.log(evaluacion)
+    let mensaje = await guardarEvaluacion(evaluacion, "organizacion", email, empresa);
+    alert(mensaje.mensaje)
+  }
+  if (seccion == "proServ") {
+    let preguntas = new Object();
+    let suma = 0;
+    for (let step = 0; step < 6; step++) {
+      var preguntaActual = document.getElementsByName("proServP" + (step + 1));
+      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
+      let pregunta = "pregunta " + (step + 1)
+      if (checkedRadio == undefined) {
+        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
+        return
+      }
+      switch (checkedRadio.value) {
+        case "Falso":
+          suma = suma + 1
+          break;
+        case "No totalmente cierto":
+          suma = suma + 2
+          break;
+        case "No se / No es aplicable":
+          suma = suma + 3
+          break;
+        case "Casi verdadero":
+          suma = suma + 4
+          break;
+        case "Verdadero":
+          suma = suma + 5
+          break;
+        default:
+          return
+      }
+      preguntas[pregunta] = checkedRadio.value;
+    }
 
-  todasPD2.forEach(lt => {
-    sumaPD2Numeros = sumaPD2Numeros + parseInt(lt.options[lt.selectedIndex].text)
-  })
+    var botonProServ = document.getElementById("btnProServ");
+    botonProServ.textContent = "Preguntas relacionadas con el producto y servicio " + suma + "/30"
+    botonProServ.classList.remove("btn-dark")
+    botonProServ.classList.add("btn-success")
+    console.log(preguntas)
+    console.log(suma)
+    
+    //se guarda la evaluacion
+    let evaluacion = new Object();
+    evaluacion["email"] = email
+    evaluacion["empresa"] = empresa
+    evaluacion["preguntas"] = preguntas
+    evaluacion["seccion"] = "procesoServicio"
+    evaluacion["puntaje"] = suma
+    console.log(evaluacion)
+    let mensaje = await guardarEvaluacion(evaluacion, "procesoServicio", email, empresa);
+    alert(mensaje.mensaje)
+  }
+  if (seccion == "invoCliente") {
+    let preguntas = new Object();
+    let suma = 0;
+    for (let step = 0; step < 6; step++) {
+      var preguntaActual = document.getElementsByName("invoClienteP" + (step + 1));
+      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
+      let pregunta = "pregunta " + (step + 1)
+      if (checkedRadio == undefined) {
+        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
+        return
+      }
+      switch (checkedRadio.value) {
+        case "Falso":
+          suma = suma + 1
+          break;
+        case "No totalmente cierto":
+          suma = suma + 2
+          break;
+        case "No se / No es aplicable":
+          suma = suma + 3
+          break;
+        case "Casi verdadero":
+          suma = suma + 4
+          break;
+        case "Verdadero":
+          suma = suma + 5
+          break;
+        default:
+          return
+      }
+      preguntas[pregunta] = checkedRadio.value;
+    }
 
-  todasPD3.forEach(lt => {
-    sumaPD3Numeros = sumaPD3Numeros + parseInt(lt.options[lt.selectedIndex].text)
-  })
+    var botonProServ = document.getElementById("btnInvoCliente");
+    botonProServ.textContent = "Preguntas relacionadas con el involucramiento del cliente " + suma + "/30"
+    botonProServ.classList.remove("btn-dark")
+    botonProServ.classList.add("btn-success")
+    console.log(preguntas)
+    console.log(suma)
+    
+    //se guarda la evaluacion
+    let evaluacion = new Object();
+    evaluacion["email"] = email
+    evaluacion["empresa"] = empresa
+    evaluacion["preguntas"] = preguntas
+    evaluacion["seccion"] = "involucracionDelCliente"
+    evaluacion["puntaje"] = suma
+    console.log(evaluacion)
+    let mensaje = await guardarEvaluacion(evaluacion, "involucracionDelCliente", email, empresa);
+    alert(mensaje.mensaje)
+  }
+  if (seccion == "valor") {
+    let preguntas = new Object();
+    let suma = 0;
+    for (let step = 0; step < 7; step++) {
+      var preguntaActual = document.getElementsByName("valorP" + (step + 1));
+      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
+      let pregunta = "pregunta " + (step + 1)
+      if (checkedRadio == undefined) {
+        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
+        return
+      }
+      switch (checkedRadio.value) {
+        case "Falso":
+          suma = suma + 1
+          break;
+        case "No totalmente cierto":
+          suma = suma + 2
+          break;
+        case "No se / No es aplicable":
+          suma = suma + 3
+          break;
+        case "Casi verdadero":
+          suma = suma + 4
+          break;
+        case "Verdadero":
+          suma = suma + 5
+          break;
+        default:
+          return
+      }
+      preguntas[pregunta] = checkedRadio.value;
+    }
 
-  todasPD4.forEach(lt => {
-    sumaPD4Numeros = sumaPD4Numeros + parseInt(lt.options[lt.selectedIndex].text)
-  })
+    var botonProServ = document.getElementById("btnValor");
+    botonProServ.textContent = "Preguntas relacionadas con la realización de valor " + suma + "/35"
+    botonProServ.classList.remove("btn-dark")
+    botonProServ.classList.add("btn-success")
+    console.log(preguntas)
+    console.log(suma)
+    
+    //se guarda la evaluacion
+    let evaluacion = new Object();
+    evaluacion["email"] = email
+    evaluacion["empresa"] = empresa
+    evaluacion["preguntas"] = preguntas
+    evaluacion["seccion"] = "valor"
+    evaluacion["puntaje"] = suma
+    console.log(evaluacion)
+    let mensaje = await guardarEvaluacion(evaluacion, "valor", email, empresa);
+    alert(mensaje.mensaje)
+  }
+  if (seccion == "proceso") {
+    let preguntas = new Object();
+    let suma = 0;
+    for (let step = 0; step < 5; step++) {
+      var preguntaActual = document.getElementsByName("procesoP" + (step + 1));
+      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
+      let pregunta = "pregunta " + (step + 1)
+      if (checkedRadio == undefined) {
+        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
+        return
+      }
+      switch (checkedRadio.value) {
+        case "Falso":
+          suma = suma + 1
+          break;
+        case "No totalmente cierto":
+          suma = suma + 2
+          break;
+        case "No se / No es aplicable":
+          suma = suma + 3
+          break;
+        case "Casi verdadero":
+          suma = suma + 4
+          break;
+        case "Verdadero":
+          suma = suma + 5
+          break;
+        default:
+          return
+      }
+      preguntas[pregunta] = checkedRadio.value;
+    }
 
-  todasPD5.forEach((lt, i) => {
-    sumaPD5Numeros = sumaPD5Numeros + parseInt(lt.options[lt.selectedIndex].text)
-  })
+    var botonProServ = document.getElementById("btnProceso");
+    botonProServ.textContent = "Preguntas relacionadas con el proceso " + suma + "/25"
+    botonProServ.classList.remove("btn-dark")
+    botonProServ.classList.add("btn-success")
+    console.log(preguntas)
+    console.log(suma)
 
-  todasPNumeros = [sumaPD1Numeros, sumaPD2Numeros, sumaPD3Numeros, sumaPD4Numeros, sumaPD5Numeros]
-  return todasPNumeros;
+    //se guarda la evaluacion
+    let evaluacion = new Object();
+    evaluacion["email"] = email
+    evaluacion["empresa"] = empresa
+    evaluacion["preguntas"] = preguntas
+    evaluacion["seccion"] = "proceso"
+    evaluacion["puntaje"] = suma
+    console.log(evaluacion)
+    let mensaje = await guardarEvaluacion(evaluacion, "proceso", email, empresa);
+    alert(mensaje.mensaje)
+  }
+  if (seccion == "comunidad") {
+    let preguntas = new Object();
+    let suma = 0;
+    for (let step = 0; step < 6; step++) {
+      var preguntaActual = document.getElementsByName("comunidadP" + (step + 1));
+      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
+      let pregunta = "pregunta " + (step + 1)
+      if (checkedRadio == undefined) {
+        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
+        return
+      }
+      switch (checkedRadio.value) {
+        case "Falso":
+          suma = suma + 1
+          break;
+        case "No totalmente cierto":
+          suma = suma + 2
+          break;
+        case "No se / No es aplicable":
+          suma = suma + 3
+          break;
+        case "Casi verdadero":
+          suma = suma + 4
+          break;
+        case "Verdadero":
+          suma = suma + 5
+          break;
+        default:
+          return
+      }
+      preguntas[pregunta] = checkedRadio.value;
+    }
+
+    var botonProServ = document.getElementById("btnComunidad");
+    botonProServ.textContent = "Preguntas relacionadas con la comunidad " + suma + "/30"
+    botonProServ.classList.remove("btn-dark")
+    botonProServ.classList.add("btn-success")
+    console.log(preguntas)
+    console.log(suma)
+    
+    //se guarda la evaluacion
+    let evaluacion = new Object();
+    evaluacion["email"] = email
+    evaluacion["empresa"] = empresa
+    evaluacion["preguntas"] = preguntas
+    evaluacion["seccion"] = "comunidad"
+    evaluacion["puntaje"] = suma
+    console.log(evaluacion)
+    let mensaje = await guardarEvaluacion(evaluacion, "comunidad", email, empresa);
+    alert(mensaje.mensaje)
+  }
+  if (seccion == "aprzjOrg") {
+    let preguntas = new Object();
+    let suma = 0;
+    for (let step = 0; step < 8; step++) {
+      var preguntaActual = document.getElementsByName("aprzjOrgP" + (step + 1));
+      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
+      let pregunta = "pregunta " + (step + 1)
+      if (checkedRadio == undefined) {
+        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
+        return
+      }
+      switch (checkedRadio.value) {
+        case "Falso":
+          suma = suma + 1
+          break;
+        case "No totalmente cierto":
+          suma = suma + 2
+          break;
+        case "No se / No es aplicable":
+          suma = suma + 3
+          break;
+        case "Casi verdadero":
+          suma = suma + 4
+          break;
+        case "Verdadero":
+          suma = suma + 5
+          break;
+        default:
+          return
+      }
+      preguntas[pregunta] = checkedRadio.value;
+    }
+
+    var botonProServ = document.getElementById("btnAprzjOrg");
+    botonProServ.textContent = "Preguntas relacionadas con el aprendizaje organizacional " + suma + "/40"
+    botonProServ.classList.remove("btn-dark")
+    botonProServ.classList.add("btn-success")
+    console.log(preguntas)
+    console.log(suma)
+    
+    //se guarda la evaluacion
+    let evaluacion = new Object();
+    evaluacion["email"] = email
+    evaluacion["empresa"] = empresa
+    evaluacion["preguntas"] = preguntas
+    evaluacion["seccion"] = "aprendizajeOrganizacional"
+    evaluacion["puntaje"] = suma
+    console.log(evaluacion)
+    let mensaje = await guardarEvaluacion(evaluacion, "aprendizajeOrganizacional", email, empresa);
+    alert(mensaje.mensaje)
+  }
 }
 
 function generateRandomInteger(max) {
@@ -134,9 +448,9 @@ function calcularNivel(IMD) {
   }
 }
 
-async function guardarEvaluacion(evaluacion) {
+async function guardarEvaluacion(evaluacion, tipo) {
   //
-  const response = await fetch("/guardarEvaluacion", {
+  const response = await fetch("/guardarEvaluacion/" + tipo, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -145,6 +459,8 @@ async function guardarEvaluacion(evaluacion) {
     body: JSON.stringify(evaluacion)
   })
   console.log(JSON.stringify(evaluacion));
+  const data = await response.json();
+  return data
 }
 
 async function obtenerPorcentajesEv() {
@@ -405,6 +721,7 @@ async function evaluar() {
     }
   }
 }
+
 async function createPDF() {
   let empresaRaw = document.getElementById('idEmpresa').textContent;
   let empresa = empresaRaw.replace(/\s+/g, '');
