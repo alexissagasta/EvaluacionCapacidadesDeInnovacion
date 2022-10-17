@@ -1439,7 +1439,7 @@
 
     <div class="position-relative">
       <button id="btnEv" class="btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle"
-        onclick="obtenerRespuestas()">
+        onclick="renderizarPagina()">
         Evaluar
       </button>
     </div>
@@ -1454,6 +1454,9 @@
     <br>
   </div>
   <br>
+  <script>
+    this.onload = renderizarPagina();
+  </script>
 </body>
 
 </html>

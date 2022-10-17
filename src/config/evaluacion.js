@@ -47,14 +47,33 @@ class gestionarEvaluacion {
 
     }
 
-    listarEvaluacionesPorEmail = async (client, email) => {
+    listarEvaluaciones = async (client, usuario) => {
         try {
             // specify the DB's name
             const db = client.db('EvaluacionCapacidadesDeInnovacion');
             // execute find query
-            const items = await db.collection('evaluaciones').find({ "email": email }).toArray();
-            //console.log(items);
-            return items;
+            let secciones = new Object();
+            let respuestasEvaluacion = new Object();
+            let estrategia = await db.collection('estrategia').find({ email: usuario.email, empresa: usuario.empresa }).toArray();
+            let organizacion = await db.collection('organizacion').find({ email: usuario.email, empresa: usuario.empresa }).toArray();
+            let procesoServicio = await db.collection('procesoServicio').find({ email: usuario.email, empresa: usuario.empresa }).toArray();
+            let involucracionDelCliente = await db.collection('involucracionDelCliente').find({ email: usuario.email, empresa: usuario.empresa }).toArray();
+            let valor = await db.collection('valor').find({ email: usuario.email, empresa: usuario.empresa }).toArray();
+            let proceso = await db.collection('proceso').find({ email: usuario.email, empresa: usuario.empresa }).toArray();
+            let comunidad = await db.collection('comunidad').find({ email: usuario.email, empresa: usuario.empresa }).toArray();
+            let aprendizajeOrganizacional = await db.collection('aprendizajeOrganizacional').find({ email: usuario.email, empresa: usuario.empresa }).toArray();
+            respuestasEvaluacion = { 
+            "estrategia": estrategia[0], 
+            "organizacion": organizacion[0], 
+            "procesoServicio": procesoServicio[0], 
+            "involucracionDelCliente": involucracionDelCliente[0], 
+            "valor": valor[0], 
+            "proceso": proceso[0], 
+            "comunidad": comunidad[0], 
+            "aprendizajeOrganizacional": aprendizajeOrganizacional[0] 
+            }
+            //console.log(respuestasEvaluacion);
+            return respuestasEvaluacion;
         } catch (e) {
             console.error(e);
         }

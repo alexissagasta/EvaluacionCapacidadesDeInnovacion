@@ -13,12 +13,18 @@ const client = new MongoClient(uri, {
 
 client.connect(async function (err, db) {
 
-    router.get("/obtenerEvaluaciones/:email", async (req, res, next) => {
+    router.get("/obtenerEvaluaciones/:email/:empresa", async (req, res, next) => {
         var email = req.params.email;
+        var empresa = req.params.empresa;
         console.log(email)
+        console.log(empresa)
+        let usuario = new Object();
+        usuario["email"] = email
+        usuario["empresa"] = empresa
+        console.log(usuario)
         try {
             //Busca en la BD
-            let evaluaciones = await gestorEvaluacion.listarEvaluacionesPorEmail(db, email);
+            let evaluaciones = await gestorEvaluacion.listarEvaluaciones(db, usuario);
             if (evaluaciones.length == 0) {
                 mensaje = { msj: "no hay evaluaciones!" }
                 res.status(206).send(mensaje);
@@ -35,7 +41,7 @@ client.connect(async function (err, db) {
         try {
             const data = req.body;
             var tipo = req.params.tipo;
-            console.log("Evaluacion: " + JSON.stringify(data));
+            //console.log("Evaluacion: " + JSON.stringify(data));
             //Almacena en Json
             info = await gestorEvaluacion.registrarEvaluacion(db, data, tipo);
             //Se verifica si se agrego el área
