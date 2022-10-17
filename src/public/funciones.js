@@ -471,260 +471,85 @@ async function renderizarPagina() {
     botonProServ.classList.remove("btn-dark")
     botonProServ.classList.add("btn-success")
   }
-  if (seccion == "invoCliente") {
-    let preguntas = new Object();
-    let suma = 0;
+  if (respuestasGuardadas.involucracionDelCliente != undefined) {
     for (let step = 0; step < 6; step++) {
       var preguntaActual = document.getElementsByName("invoClienteP" + (step + 1));
-      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
-      let pregunta = "pregunta " + (step + 1)
-      if (checkedRadio == undefined) {
-        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
-        return
+      for (let i = 0; i < 5; i++) {
+        let pregunta = "pregunta " + (step + 1)
+        if (preguntaActual[i].value == respuestasGuardadas.involucracionDelCliente.preguntas[pregunta]) {
+          preguntaActual[i].checked = true;
+        }
       }
-      switch (checkedRadio.value) {
-        case "Falso":
-          suma = suma + 1
-          break;
-        case "No totalmente cierto":
-          suma = suma + 2
-          break;
-        case "No se / No es aplicable":
-          suma = suma + 3
-          break;
-        case "Casi verdadero":
-          suma = suma + 4
-          break;
-        case "Verdadero":
-          suma = suma + 5
-          break;
-        default:
-          return
-      }
-      preguntas[pregunta] = checkedRadio.value;
     }
 
     var botonProServ = document.getElementById("btnInvoCliente");
-    botonProServ.textContent = "Preguntas relacionadas con el involucramiento del cliente " + suma + "/30"
+    botonProServ.textContent = "Preguntas relacionadas con el involucramiento del cliente " + respuestasGuardadas.involucracionDelCliente.puntaje + "/30"
     botonProServ.classList.remove("btn-dark")
     botonProServ.classList.add("btn-success")
-    console.log(preguntas)
-    console.log(suma)
-
-    //se guarda la evaluacion
-    let evaluacion = new Object();
-    evaluacion["email"] = email
-    evaluacion["empresa"] = empresa
-    evaluacion["preguntas"] = preguntas
-    evaluacion["seccion"] = "involucracionDelCliente"
-    evaluacion["puntaje"] = suma
-    console.log(evaluacion)
-    let mensaje = await guardarEvaluacion(evaluacion, "involucracionDelCliente", email, empresa);
-    alert(mensaje.mensaje)
   }
-  if (seccion == "valor") {
-    let preguntas = new Object();
-    let suma = 0;
+  if (respuestasGuardadas.valor != undefined) {
     for (let step = 0; step < 7; step++) {
       var preguntaActual = document.getElementsByName("valorP" + (step + 1));
-      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
-      let pregunta = "pregunta " + (step + 1)
-      if (checkedRadio == undefined) {
-        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
-        return
+      for (let i = 0; i < 5; i++) {
+        let pregunta = "pregunta " + (step + 1)
+        if (preguntaActual[i].value == respuestasGuardadas.valor.preguntas[pregunta]) {
+          preguntaActual[i].checked = true;
+        }
       }
-      switch (checkedRadio.value) {
-        case "Falso":
-          suma = suma + 1
-          break;
-        case "No totalmente cierto":
-          suma = suma + 2
-          break;
-        case "No se / No es aplicable":
-          suma = suma + 3
-          break;
-        case "Casi verdadero":
-          suma = suma + 4
-          break;
-        case "Verdadero":
-          suma = suma + 5
-          break;
-        default:
-          return
-      }
-      preguntas[pregunta] = checkedRadio.value;
     }
 
     var botonProServ = document.getElementById("btnValor");
-    botonProServ.textContent = "Preguntas relacionadas con la realización de valor " + suma + "/35"
+    botonProServ.textContent = "Preguntas relacionadas con la realización de valor " + respuestasGuardadas.valor.puntaje + "/35"
     botonProServ.classList.remove("btn-dark")
     botonProServ.classList.add("btn-success")
-    console.log(preguntas)
-    console.log(suma)
-
-    //se guarda la evaluacion
-    let evaluacion = new Object();
-    evaluacion["email"] = email
-    evaluacion["empresa"] = empresa
-    evaluacion["preguntas"] = preguntas
-    evaluacion["seccion"] = "valor"
-    evaluacion["puntaje"] = suma
-    console.log(evaluacion)
-    let mensaje = await guardarEvaluacion(evaluacion, "valor", email, empresa);
-    alert(mensaje.mensaje)
   }
-  if (seccion == "proceso") {
-    let preguntas = new Object();
-    let suma = 0;
+  if (respuestasGuardadas.proceso != undefined) {
     for (let step = 0; step < 5; step++) {
       var preguntaActual = document.getElementsByName("procesoP" + (step + 1));
-      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
-      let pregunta = "pregunta " + (step + 1)
-      if (checkedRadio == undefined) {
-        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
-        return
+      for (let i = 0; i < 5; i++) {
+        let pregunta = "pregunta " + (step + 1)
+        if (preguntaActual[i].value == respuestasGuardadas.proceso.preguntas[pregunta]) {
+          preguntaActual[i].checked = true;
+        }
       }
-      switch (checkedRadio.value) {
-        case "Falso":
-          suma = suma + 1
-          break;
-        case "No totalmente cierto":
-          suma = suma + 2
-          break;
-        case "No se / No es aplicable":
-          suma = suma + 3
-          break;
-        case "Casi verdadero":
-          suma = suma + 4
-          break;
-        case "Verdadero":
-          suma = suma + 5
-          break;
-        default:
-          return
-      }
-      preguntas[pregunta] = checkedRadio.value;
     }
 
     var botonProServ = document.getElementById("btnProceso");
-    botonProServ.textContent = "Preguntas relacionadas con el proceso " + suma + "/25"
+    botonProServ.textContent = "Preguntas relacionadas con el proceso " + respuestasGuardadas.proceso.puntaje + "/25"
     botonProServ.classList.remove("btn-dark")
     botonProServ.classList.add("btn-success")
-    console.log(preguntas)
-    console.log(suma)
-
-    //se guarda la evaluacion
-    let evaluacion = new Object();
-    evaluacion["email"] = email
-    evaluacion["empresa"] = empresa
-    evaluacion["preguntas"] = preguntas
-    evaluacion["seccion"] = "proceso"
-    evaluacion["puntaje"] = suma
-    console.log(evaluacion)
-    let mensaje = await guardarEvaluacion(evaluacion, "proceso", email, empresa);
-    alert(mensaje.mensaje)
   }
-  if (seccion == "comunidad") {
-    let preguntas = new Object();
-    let suma = 0;
+  if (respuestasGuardadas.comunidad != undefined) {
     for (let step = 0; step < 6; step++) {
       var preguntaActual = document.getElementsByName("comunidadP" + (step + 1));
-      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
-      let pregunta = "pregunta " + (step + 1)
-      if (checkedRadio == undefined) {
-        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
-        return
+      for (let i = 0; i < 5; i++) {
+        let pregunta = "pregunta " + (step + 1)
+        if (preguntaActual[i].value == respuestasGuardadas.comunidad.preguntas[pregunta]) {
+          preguntaActual[i].checked = true;
+        }
       }
-      switch (checkedRadio.value) {
-        case "Falso":
-          suma = suma + 1
-          break;
-        case "No totalmente cierto":
-          suma = suma + 2
-          break;
-        case "No se / No es aplicable":
-          suma = suma + 3
-          break;
-        case "Casi verdadero":
-          suma = suma + 4
-          break;
-        case "Verdadero":
-          suma = suma + 5
-          break;
-        default:
-          return
-      }
-      preguntas[pregunta] = checkedRadio.value;
     }
 
     var botonProServ = document.getElementById("btnComunidad");
-    botonProServ.textContent = "Preguntas relacionadas con la comunidad " + suma + "/30"
+    botonProServ.textContent = "Preguntas relacionadas con la comunidad " + respuestasGuardadas.comunidad.puntaje + "/30"
     botonProServ.classList.remove("btn-dark")
     botonProServ.classList.add("btn-success")
-    console.log(preguntas)
-    console.log(suma)
-
-    //se guarda la evaluacion
-    let evaluacion = new Object();
-    evaluacion["email"] = email
-    evaluacion["empresa"] = empresa
-    evaluacion["preguntas"] = preguntas
-    evaluacion["seccion"] = "comunidad"
-    evaluacion["puntaje"] = suma
-    console.log(evaluacion)
-    let mensaje = await guardarEvaluacion(evaluacion, "comunidad", email, empresa);
-    alert(mensaje.mensaje)
   }
-  if (seccion == "aprzjOrg") {
-    let preguntas = new Object();
-    let suma = 0;
+  if (respuestasGuardadas.aprendizajeOrganizacional != undefined) {
     for (let step = 0; step < 8; step++) {
       var preguntaActual = document.getElementsByName("aprzjOrgP" + (step + 1));
-      var checkedRadio = Array.from(preguntaActual).find((radio) => radio.checked);
-      let pregunta = "pregunta " + (step + 1)
-      if (checkedRadio == undefined) {
-        alert("Tiene que constestar todas las preguntas (Pregunta " + (step + 1) + ")")
-        return
+      for (let i = 0; i < 5; i++) {
+        let pregunta = "pregunta " + (step + 1)
+        if (preguntaActual[i].value == respuestasGuardadas.aprendizajeOrganizacional.preguntas[pregunta]) {
+          preguntaActual[i].checked = true;
+        }
       }
-      switch (checkedRadio.value) {
-        case "Falso":
-          suma = suma + 1
-          break;
-        case "No totalmente cierto":
-          suma = suma + 2
-          break;
-        case "No se / No es aplicable":
-          suma = suma + 3
-          break;
-        case "Casi verdadero":
-          suma = suma + 4
-          break;
-        case "Verdadero":
-          suma = suma + 5
-          break;
-        default:
-          return
-      }
-      preguntas[pregunta] = checkedRadio.value;
     }
 
     var botonProServ = document.getElementById("btnAprzjOrg");
-    botonProServ.textContent = "Preguntas relacionadas con el aprendizaje organizacional " + suma + "/40"
+    botonProServ.textContent = "Preguntas relacionadas con el aprendizaje organizacional " + respuestasGuardadas.aprendizajeOrganizacional.puntaje + "/40"
     botonProServ.classList.remove("btn-dark")
     botonProServ.classList.add("btn-success")
-    console.log(preguntas)
-    console.log(suma)
-
-    //se guarda la evaluacion
-    let evaluacion = new Object();
-    evaluacion["email"] = email
-    evaluacion["empresa"] = empresa
-    evaluacion["preguntas"] = preguntas
-    evaluacion["seccion"] = "aprendizajeOrganizacional"
-    evaluacion["puntaje"] = suma
-    console.log(evaluacion)
-    let mensaje = await guardarEvaluacion(evaluacion, "aprendizajeOrganizacional", email, empresa);
-    alert(mensaje.mensaje)
   }
 }
 
